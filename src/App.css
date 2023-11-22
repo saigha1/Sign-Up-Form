@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  :root{ 
+    --screenHeight: 100vh;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  .App {
+    background-color: rgb(78, 61, 78);
+    height: var(--screenHeight);
+    display: flex;
+    justify-content: space-between;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  .page{
+    background-color: white;
+    max-width: 0.5*var(--screenHeight);;
+    height: 0.7*var(--screenHeight);
+    margin: auto;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+  
   }
+
+  .info{
+    max-width: 0.4*var(--screenHeight);
+    margin-right: 20px;
+  }
+
+  h1, p{
+    text-align: left;
+    margin-left: 30px;
+
+  }
+  .be{
+    margin-left: 10px;
+  }
+
+  .List{
+    display: flex;
+  }
+
+  .List ul{
+    font-size: small;
+  }
+
+
+  ul{
+    list-style: none;
+    padding: 0px;;
+  }
+
+  li{
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 30px;
+  }
+
+  li span{
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  .error{
+    color: orangered;
+    display: none;
+  }
+  .E-mail{
+    width: 80%;
+    line-height: 50px;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    border: solid gray 1px;
+    padding-left: 15px;
+  }
+  .email{
+    text-align: left;
+    margin-left: 30px;
+  }
+
+  .block{
+    border-radius: 30px;
+    height: 0.7*var(--screenHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button{
+    background-color: rgb(53, 36, 75);
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    padding: 20px 2px;
+    width: 80%;
+  }
+  .picture{
+    display: block;
+    height: 0.60*var(--screenHeight);
+    margin: 20px;
+  }
+  .picturetwo{
+    display: none;
+  }
+
+@media screen and (max-width: 480px){
+  .App{
+    display: block;
+    background-color: white;
+    height: auto;
+  }
+  .page{
+    
+    flex-direction: column-reverse;
+    border-radius: 0px;
+    margin-bottom: 30px;
+    height: auto;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .info{
+    margin-right: 0px;
+    margin-top: 20px;
+   }
+ 
+
+  .picture{
+    display: none;
+  }
+
+  .picturetwo{
+   display: block;
+   overflow: none;
+   border-radius: 0 0 10px 10px;
+   margin: 0px;
+   width: 100%;
+   }
+   
+  
 }
