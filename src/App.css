@@ -103,6 +103,18 @@
   .picturetwo{
     display: none;
   }
+  .success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button{
+    background-color: rgb(7, 21, 102);
+    color: white;
+    text-align: center;
+    width: 80%;
+
+  }
 
 @media screen and (max-width: 480px){
   .App{

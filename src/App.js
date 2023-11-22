@@ -2,6 +2,9 @@ import './App.css';
 import picture from './assets/images/illustration-sign-up-desktop.svg'
 import mobilePicture from './assets/images/illustration-sign-up-mobile.svg';
 import icon from './assets/images/icon-list.svg'
+import successIcon from './assets/images/icon-success.svg'
+
+
 // import { useEffect } from 'react';
 
 function App() {
@@ -54,10 +57,19 @@ function App() {
         </div>
 
       </div>
-      {/* ) : (
-        <h2>Success!</h2>      
-      )} */}
-    </div>
+      {/* ) : ( */}
+        {/* <div className='success'>
+          <img src= {successIcon} alt="success"/>
+        <h1>Thanks for subscribing!</h1>  
+        <p>A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
+
+        <button class = "button">Dismiss message</button> */}
+
+
+
+        {/* </div>    */}
+      {/* )} */}
+    {/* </div> */}
     
   
   );
