@@ -2,6 +2,16 @@
     --screenHeight: 100vh;
   }
 
+  @font-face {
+    font-family: Roboto-Bold, Roboto-Regular;
+    src: url('./assets/fonts/Roboto-Bold.ttf') format('ttf'),
+   url('./assets/fonts/Roboto-Regular.ttf') format('ttf');
+
+  }
+
+  body {
+    font-family: RobotoBold, Roboto-Regular, sans-serif;
+  }
   .App {
     background-color: rgb(78, 61, 78);
     height: var(--screenHeight);
@@ -12,8 +22,8 @@
 
   .page{
     background-color: white;
-    max-width: 0.5*var(--screenHeight);;
-    height: 0.7*var(--screenHeight);
+    max-width: 0.5*var(--screenHeight);
+    max-height: 0.5*var(--screenHeight);
     margin: auto;
     left: 50%;
     display: flex;
@@ -24,13 +34,19 @@
 
   .info{
     max-width: 0.4*var(--screenHeight);
+    height: 0.5*var(--screenHeight);
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   
   }
+
+
 
   h1, p{
     text-align: left;
     margin-left: 30px;
-
   }
   .be{
     margin-left: 10px;
@@ -77,11 +93,12 @@
   .email{
     text-align: left;
     margin-left: 30px;
+    /* background-color: red; */
   }
 
   .block{
     border-radius: 30px;
-    height: 0.7*var(--screenHeight);
+    height: 0.4*var(--screenHeight);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,41 +112,83 @@
     padding: 20px 2px;
     width: 80%;
   }
+  button:active{
+    background-color: orangered;
+  }
   .picture{
     display: block;
-    height: 0.60*var(--screenHeight);
+    height: 0.50*var(--screenHeight);
     margin: 20px;
   }
   .picturetwo{
     display: none;
   }
-  .success{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .button{
-    background-color: rgb(7, 21, 102);
-    color: white;
-    text-align: center;
-    width: 80%;
 
+  .headings{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    /* background-color: green; */
+    margin: 0px;
+    padding: 0px;
+    line-height: 10px;
+  }
+  h6{
+    margin: 1px;
+    padding: 1px;
+  }
+
+
+  /* Success */
+
+  .message{
+    width: 40%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    margin: auto;    
+  }
+
+  .success{
+    max-width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: left;
+    border-radius: 12px; 
+    padding: 35px;
+    background-color: white;
+  }
+
+  .button{
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(7, 21, 102);
+  }
+
+  .thanks{
+    margin-left: 0px;
+  }
+
+  .button:active{
+    background-color: orangered;
   }
 
 @media screen and (max-width: 480px){
   .App{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     background-color: white;
-    height: auto;
+    height: 0.8*var(--screenHeight);
+    /* text-align: left; */
   }
   .page{
-    
     flex-direction: column-reverse;
     border-radius: 0px;
     margin-bottom: 30px;
     height: auto;
     background-color: white;
-
     display: flex;
     justify-content: space-between;
 
@@ -138,7 +197,7 @@
     margin-right: 0px;
     margin-top: 20px;
    }
- 
+
 
   .picture{
     display: none;
@@ -149,8 +208,27 @@
    overflow: none;
    border-radius: 0 0 10px 10px;
    margin: 0px;
+
    width: 100%;
    }
    
+  .message{
+    margin-left: 0px;
+    width: 100%;
+    
+
+  }
+  .success{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 400px;
   
+  }
+/* 
+  .text{
+    margin-top: -100px;
+    
+  } */
 }

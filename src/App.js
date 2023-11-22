@@ -3,35 +3,33 @@ import picture from './assets/images/illustration-sign-up-desktop.svg'
 import mobilePicture from './assets/images/illustration-sign-up-mobile.svg';
 import icon from './assets/images/icon-list.svg'
 import successIcon from './assets/images/icon-success.svg'
-
-
-// import { useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
 
-      // const email = document.QuerySelector('E-mail')
-      // const error = document.QuerySelector('error')
+      const [email, setEmail] = useState('');
+      const [isValid, setIsValid] = useState(null);
 
-      // const [success, setSuccess] = useState(null)
-
-      // const onClick()=>{
-      //       if email == regex(){
-      //         email.style.border = solid red 1px;
-      //         error.style.display = block;
-      //       } else {
-      //         success = true;
-      //       }
-      // }
-      // useEffect{(),[]}
+      const onClick = () => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!regex.test(email)) {
+          setIsValid(false);
+        } else {
+          setIsValid(true);
+        }
+      };
       
+   
   return (
     <div className="App">
-      {/* {!success?( */}
+      {!isValid?(
       <div className='page'>
         <div className='info'>
+          <div className='PMinfo'>
           <h1> Stay Updated!</h1>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <div>
+        
             <div  className='List'>
               <ul>
                 <li> <img  className = "image" src = {icon} alt = "icon" /> <p className='be'>Product discovery and building what matters</p></li>
@@ -43,11 +41,15 @@ function App() {
           
           <div className='email'>
             <div className='headings'>
-              <h4> E-mail address</h4>
-              <h4 className='error'>Valid email required</h4>
+              <h6 > E-mail address</h6>
+              
+          
+            {isValid === false && (
+              <h6 style={{ color: 'red' }} className='errorMessage'>Valid email required.</h6>
+            )}
             </div>
-            <input className='E-mail' placeholder='email@company.com'></input>
-            <button onClick = "onClick()">Subscribe to Monthly newsletter</button>
+            <input className='E-mail' type='text'  value={email} onChange = {(e) => setEmail(e.target.value)} placeholder='email@company.com' />
+            <button onClick = {onClick}>Subscribe to Monthly newsletter</button>
           </div>
         </div>
 
@@ -57,21 +59,22 @@ function App() {
         </div>
 
       </div>
-      {/* ) : ( */}
-        {/* <div className='success'>
-          <img src= {successIcon} alt="success"/>
-        <h1>Thanks for subscribing!</h1>  
-        <p>A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
-
-        <button class = "button">Dismiss message</button> */}
-
-
-
-        {/* </div>    */}
-      {/* )} */}
-    {/* </div> */}
-    
-  
+      ) : ( 
+        <div className='message'>
+          <div className='success'>
+            <div className='text'>
+              <img src = {successIcon} alt="success"/>
+              <h1 className='thanks' >Thanks for subscribing!</h1>  
+              <p  className='thanks'>A confirmation email has been sent to <strong>ash@loremcompany.com </strong>.Please open it and click the button inside to confirm your subscription.</p>
+            </div>
+            
+            <div>
+              <button className = "button">Dismiss message</button> 
+            </div>
+          </div>  
+        </div>  
+       )}
+    </div>
   );
 }
 
